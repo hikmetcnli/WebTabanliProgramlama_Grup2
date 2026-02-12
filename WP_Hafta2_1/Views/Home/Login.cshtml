@@ -1,0 +1,37 @@
+﻿@* User modelini ekle *@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitap Formu</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="~/css/style.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <form asp-controller="Home" asp-action="LoginKontrol" method="post">
+        <h2>Login Formu</h2>
+
+        @* <label>Email:</label> *@
+        @* <input type="text" placeholder="Email Giriniz"> *@
+        <label asp-for="Email" id="Email">Email</label>
+        <input asp-for="Email" type="text" />
+
+        @* <label>Şifre:</label>
+        <input type="password" placeholder="Şifre Giriniz"> *@
+
+        <label asp-for="Password">Şifre</label>
+        <input asp-for="password" type="password" />
+
+      
+         
+        <button type="submit">Giriş Yap</button>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitap Formu</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+	<link href="~/css/style.css" rel="stylesheet" />
+  
+</head>
+
+<body>
+
+    <form>
+        <h2>Kitap Kayıt Formu</h2>
+
+        <label>Kitap No:</label>
+        <input type="text" placeholder="Kitap numarası giriniz">
+
+        <label>Kitap Adı:</label>
+        <input type="text" placeholder="Kitap adı giriniz">
+
+        <label>Yazar:</label>
+        <select>
+            <option>Dostoyevski</option>
+            <option>Orhan Pamuk</option>
+            <option>Sabahattin Ali</option>
+            <option>George Orwell</option>
+        </select>
+
+        <label>Kitap Açıklama:</label>
+        <textarea placeholder="Kitap hakkında kısa açıklama..."></textarea>
+
+        <label>Durum:</label>
+        <div class="radio-group">
+            <label><input type="radio" name="durum"> Aktif</label>
+            <label><input type="radio" name="durum"> Pasif</label>
+        </div>
+
+        <label>Kategori:</label>
+        <div class="checkbox-group">
+            <label><input type="checkbox"> Roman</label>
+            <label><input type="checkbox"> Hikaye</label>
+            <label><input type="checkbox"> Bilim Kurgu</label>
+        </div>
+
+        <label>Yayın Tarihi:</label>
+        <input type="date">
+
+        <button type="submit">Kaydet</button>
+    </form>
+
+</body>
+</html>
