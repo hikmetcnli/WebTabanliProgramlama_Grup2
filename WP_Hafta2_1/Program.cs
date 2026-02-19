@@ -7,7 +7,7 @@ var app = builder.Build();
 //app.MapGet("/", () => "Hello World!");
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Login}/{id?}"
+    pattern: "{controller=Araba}/{action=Index}/{id?}"
     );
 
 app.UseStaticFiles();

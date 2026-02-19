@@ -1,4 +1,9 @@
-﻿<html>
+﻿@using WP_Hafta2_1.Models
+
+@model Kitap
+
+
+<html>
 	<head>
 		<title>Gedik Kütüphane Otomasyonu</title>
 	</head>
@@ -9,6 +14,11 @@
 			<td><p>Kütüphane Otomasyonu</p></td>
 			</tr>
 		</table>
+
+	<h3>No: @Model.Id </h3>
+	<h3>Kitabın Adı: @Model.Adi </h3>
+	<h3>Yazar: @Model.Yazar </h3>
+	<h3>IDFiyat @Model.Fiyat </h3>
 		
 		
 	</body>

@@ -9,19 +9,55 @@ namespace WP_Hafta2_1.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            Kitap k1 = new Kitap();
+            k1.Adi = "FELSEFE";
+            k1.Yazar = "HİKMET";
+            k1.Fiyat = 100;
+            k1.Id = 1;
+
+            Kitap k2 = new Kitap();
+            k2.Adi = "matematil";
+            k2.Yazar = "CANLI";
+            k2.Fiyat = 100;
+            k2.Id = 1;
+
+            return View(k1);
         }
         public IActionResult KitapKayit()
         {
             return View();
         }
-        public IActionResult Login()
+        public IActionResult Login(string Sonuc)
         {
-            return View();
+            ViewData["Baslik"] = "Kullanıcı Giriş Ekranı";
+
+            ViewBag.Baslik = "Kullanıcı Giriş Ekranı";
+
+            if (Sonuc != null)
+            {
+                ViewBag.Mesaj = Sonuc;
+            }
+            else
+            {
+                ViewBag.Mesaj = "";
+            }
+
+
+                return View();
         }
         [HttpPost]
-        public void LoginKontrol(User user)
+        public IActionResult LoginKontrol(User user)
         {
+
+            if (user.Email == "hikmet.canli@gedik.edu.tr" && user.Password=="1" ) 
+            {
+                return RedirectToAction("Index", "Home", new { Sonuc = "OK" });
+                 
+            }
+            else
+            {
+                return RedirectToAction("Login", "Home", new {Sonuc="NOK"});
+            }
         
         }
         //metot tanımı

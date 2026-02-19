@@ -1,0 +1,21 @@
+﻿@using WP_Hafta2_1.Models
+
+@model Araba
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Araba</title>
+	<style>
+		span{color:red}
+		.Model{color:yellow}
+		#renk{color:aqua}
+	</style>
+</head>
+<body>
+	<h3>ID: <span> @Model.Id  </span></h3>
+	<h3>Model: <span class="Model"> @Model.Model  </span></h3>
+	<h3>Renk: <span id="renk"> @Model.Renk </span></h3>
+	<h3>Yil: <span class="Model"> @Model.Yil  </span></h3>
+	<h3> Fiyat: <span> @Model.Fiyat </span></h3>
+</body>
+</html>

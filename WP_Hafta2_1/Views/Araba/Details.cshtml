@@ -1,0 +1,42 @@
+﻿@using WP_Hafta2_1.Models
+
+@model List<Araba>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Araba Listesi</title>
+</head>
+<body>
+
+	<table>
+		<tr>
+			<td>Id</td>
+			<td>Model</td>
+			<td>Renk</td>
+			<td>Fiyat</td>
+			<td>Yil</td>
+		</tr>
+	
+		@{
+			foreach(var item in Model)
+			{
+				<tr>
+					<td> @item.Id </td>
+					<td>@item.Model</td>
+					<td>@item.Renk</td>
+					<td>@item.Fiyat</td>
+					<td>@item.Yil</td>
+				</tr>
+			}
+
+		}
+
+
+		 
+	</table>
+
+
+
+</body>
+</html>

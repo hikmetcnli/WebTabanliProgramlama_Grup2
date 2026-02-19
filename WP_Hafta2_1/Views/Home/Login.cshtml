@@ -1,21 +1,29 @@
-﻿@* User modelini ekle *@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@using WP_Hafta2_1.Models
+@model User
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kitap Formu</title>
+    <title>@ViewData["Baslik"]</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="~/css/style.css" rel="stylesheet" />
-
+    <style>
+        .red{color:red}
+    </style>
 </head>
 
 <body>
 
+
+
     <form asp-controller="Home" asp-action="LoginKontrol" method="post">
-        <h2>Login Formu</h2>
+        <h2> @ViewBag.Baslik </h2>
 
         @* <label>Email:</label> *@
         @* <input type="text" placeholder="Email Giriniz"> *@
@@ -26,12 +34,21 @@
         <input type="password" placeholder="Şifre Giriniz"> *@
 
         <label asp-for="Password">Şifre</label>
-        <input asp-for="password" type="password" />
-
-      
+        <input asp-for="Password" type="password" />
+         
+            @{
+                if (ViewBag.Mesaj == "NOK")
+                {
+                    @Html.Label("Mesaj", "Hatalı Kullanıcı Adı veya Şifre", new {@class="red"})
+                    ;
+                }
+            } 
+       
+         
          
         <button type="submit">Giriş Yap</button>
     </form>
-
+  
+  
 </body>
 </html>
